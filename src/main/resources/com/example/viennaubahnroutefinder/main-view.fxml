@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.viennaubahnroutefinder.MainController">
+  <left>
+    <VBox spacing="20" prefWidth="300">
+      <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+      </padding>
+
+      <VBox spacing="10">
+        <Label text="Route Configuration" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+        <VBox spacing="5">
+          <Label text="Start Station:"/>
+          <ComboBox fx:id="startStationCombo" prefWidth="260"/>
+        </VBox>
+
+        <VBox spacing="5">
+          <Label text="End Station:"/>
+          <ComboBox fx:id="endStationCombo" prefWidth="260"/>
+        </VBox>
+      </VBox>
+
+      <VBox spacing="10">
+        <Label text="Waypoints" style="-fx-font-weight: bold;"/>
+        <HBox spacing="5">
+          <ComboBox fx:id="waypointCombo" prefWidth="180"/>
+          <Button fx:id="addWaypointBtn" text="Add"/>
+          <Button fx:id="removeWaypointBtn" text="Remove"/>
+        </HBox>
+        <ListView fx:id="waypointsList" prefHeight="80"/>
+      </VBox>
+
+      <VBox spacing="10">
+        <Label text="Avoid Stations" style="-fx-font-weight: bold;"/>
+        <HBox spacing="5">
+          <ComboBox fx:id="avoidStationCombo" prefWidth="180"/>
+          <Button fx:id="addAvoidBtn" text="Add"/>
+          <Button fx:id="removeAvoidBtn" text="Remove"/>
+        </HBox>
+        <ListView fx:id="avoidStationsList" prefHeight="80"/>
+      </VBox>
+
+      <VBox spacing="5">
+        <Label text="Line Change Penalty:" style="-fx-font-weight: bold;"/>
+        <Slider fx:id="lineChangePenaltySlider" min="0" max="10" value="2" showTickLabels="true" showTickMarks="true"/>
+        <Label fx:id="penaltyLabel" text="2.0 km"/>
+      </VBox>
+
+      <VBox spacing="10">
+        <Label text="Find Routes" style="-fx-font-weight: bold;"/>
+        <Button fx:id="findSingleRouteBtn" text="Single Route (BFS)" prefWidth="260"/>
+        <Button fx:id="findMultipleRoutesBtn" text="Multiple Routes (DFS)" prefWidth="260"/>
+        <Button fx:id="findShortestRouteBtn" text="Shortest Distance (Dijkstra)" prefWidth="260"/>
+        <Button fx:id="findShortestWithPenaltyBtn" text="Shortest with Penalty" prefWidth="260"/>
+      </VBox>
+    </VBox>
+  </left>
+
+  <center>
+    <SplitPane dividerPositions="0.4">
+      <VBox spacing="10">
+        <padding>
+          <Insets bottom="10" left="10" right="10" top="10"/>
+        </padding>
+        <Label text="Route Results" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+        <TreeView fx:id="routeTreeView" VBox.vgrow="ALWAYS"/>
+        <TextArea fx:id="routeDetailsArea" prefHeight="200" editable="false"/>
+      </VBox>
+
+      <VBox spacing="10">
+        <padding>
+          <Insets bottom="10" left="10" right="10" top="10"/>
+        </padding>
+        <Label text="Route Map" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+        <ScrollPane VBox.vgrow="ALWAYS">
+          <Canvas fx:id="mapCanvas" width="800" height="600"/>
+        </ScrollPane>
+      </VBox>
+    </SplitPane>
+  </center>
+
+  <bottom>
+    <HBox style="-fx-background-color: #f0f0f0;" alignment="CENTER_LEFT">
+      <padding>
+        <Insets bottom="5" left="10" right="10" top="5"/>
+      </padding>
+      <Label fx:id="statusLabel" text="Ready"/>
+    </HBox>
+  </bottom>
+</BorderPane>
