@@ -3,13 +3,13 @@ package com.example.viennaubahnroutefinder.controllers;
 import com.example.viennaubahnroutefinder.data.DataLoader;
 import com.example.viennaubahnroutefinder.model.Graph;
 import com.example.viennaubahnroutefinder.model.MapVisualizer;
-import com.example.viennaubahnroutefinder.model.RouteFinder;
+import com.example.viennaubahnroutefinder.algorithm.RouteFinder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
+
 import java.util.*;
 
 public class MainController {

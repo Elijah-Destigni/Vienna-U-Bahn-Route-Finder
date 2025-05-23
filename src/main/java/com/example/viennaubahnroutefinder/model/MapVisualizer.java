@@ -1,5 +1,6 @@
 package com.example.viennaubahnroutefinder.model;
 
+import com.example.viennaubahnroutefinder.algorithm.RouteFinder;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;

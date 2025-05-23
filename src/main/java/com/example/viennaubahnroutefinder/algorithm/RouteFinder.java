@@ -1,4 +1,6 @@
-package com.example.viennaubahnroutefinder.model;
+package com.example.viennaubahnroutefinder.algorithm;
+
+import com.example.viennaubahnroutefinder.model.Graph;
 
 import java.util.*;
 

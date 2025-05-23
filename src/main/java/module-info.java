@@ -9,4 +9,6 @@ module com.example.viennaubahnroutefinder {
     opens com.example.viennaubahnroutefinder.controllers to javafx.fxml;
     exports com.example.viennaubahnroutefinder.model;
     opens com.example.viennaubahnroutefinder.model to javafx.fxml;
+    exports com.example.viennaubahnroutefinder.algorithm;
+    opens com.example.viennaubahnroutefinder.algorithm to javafx.fxml;
 }
